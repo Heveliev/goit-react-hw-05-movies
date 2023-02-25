@@ -38,7 +38,7 @@ async function fetchMovieDetails(id) {
 async function fetchCast(id) {
     try {
         const movCast = await axios(`movie/${id}/credits?api_key=${API_KEY}`);
-        return movCast.data
+        return movCast.data.cast
     } catch (error) {
         throw new Error(error)
     }

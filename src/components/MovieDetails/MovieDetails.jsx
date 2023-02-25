@@ -2,7 +2,6 @@ import { fetchMovieDetails } from "getApi/getApi";
 import { useEffect, useState } from "react";
 import { useParams, useLocation,NavLink, Outlet } from "react-router-dom";
 import { LinkButton, Image, Box } from "./MovieDetails.styled";
-// import { Cast } from "components/Cast/Cast";
 
 
 export const MovieDetails = () => {
@@ -10,7 +9,7 @@ export const MovieDetails = () => {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
     const location = useLocation();
-console.log(location)
+
     useEffect(() => {
  fetchMovieDetails(movieId)
             .then(resp => setMovie(resp))
@@ -36,15 +35,11 @@ console.log(location)
                 <li><NavLink to={`${location.pathname}/cast`}>Cast</NavLink></li>
                 <li><NavLink to={`${location.pathname}/reviews`}>Reviews</NavLink></li>
             </ul>
-        </Box>)}
-    <Outlet/>
-    
-        {/* <Route path={`${location.pathname}/:cast`}>
-            {movie && <Cast/>}
-        </Route> */}
-        {/* <Route path={`${location.pathname}/:reviews`}>
-            {}
-        </Route> */}
+        </Box>
+        )
+        }
+        <Outlet/>
+                
     </>
     )
 }
