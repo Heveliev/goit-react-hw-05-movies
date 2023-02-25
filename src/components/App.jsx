@@ -11,12 +11,17 @@ export const App = () => {
 
   return (
     <>
-      <Header />
+      < />
       <Container>
       <Routes>
-        <Route path='/' element={<HomePage />} />
+    <Route path='/' element={<Header />} >
+        <Routeindex element={<HomePage />} />
           <Route path='movies' element={<MoviesPage />} />
-          <Route path='/movies/:movieId' element={<MovieDetails/>}/>
+          <Route path='/movies/:movieId' element={<MovieDetails/>}>
+             <Route path='cast' element={<Cast />} />
+                <Route path='r' element={<R />} />
+             <Route>
+              <Route>
         </Routes>
         </Container>
     </>
