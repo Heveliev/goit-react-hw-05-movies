@@ -1,8 +1,8 @@
 import { fetchMovieDetails } from "getApi/getApi";
 import { useEffect, useState } from "react";
-import { useParams, useLocation,NavLink, Route } from "react-router-dom";
+import { useParams, useLocation,NavLink } from "react-router-dom";
 import { LinkButton, Image, Box } from "./MovieDetails.styled";
-import { Cast } from "components/Cast/Cast";
+// import { Cast } from "components/Cast/Cast";
 
 
 export const MovieDetails = () => {
@@ -38,7 +38,7 @@ console.log(location)
             </ul>
         </Box>)}
     
-        
+    
         {/* <Route path={`${location.pathname}/:cast`}>
             {movie && <Cast/>}
         </Route> */}
