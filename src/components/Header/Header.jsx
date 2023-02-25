@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { LinkNav, Nav, HeaderSt } from "./Header.styled";
 
 
@@ -9,6 +10,7 @@ export const Header = () => {
             <LinkNav to='/movies'>Movies</LinkNav>
             </Nav>
         </HeaderSt>
+        <Outlet/>
         </>
     )
 }
