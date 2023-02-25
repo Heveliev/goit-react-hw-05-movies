@@ -13,17 +13,17 @@ export const App = () => {
     <>
       < />
       <Container>
-      <Routes>
-    <Route path='/' element={<Header />} >
-        <Routeindex element={<HomePage />} />
-          <Route path='movies' element={<MoviesPage />} />
-          <Route path='/movies/:movieId' element={<MovieDetails/>}>
-             <Route path='cast' element={<Cast />} />
-                <Route path='r' element={<R />} />
-             <Route>
+        <Routes>
+          <Route path='/' element={<Header />} >
+            <Route index element={<HomePage />} />
+            <Route path='movies' element={<MoviesPage />} />
+            <Route path='/movies/:movieId' element={<MovieDetails />}>
+              <Route path='cast' element={<Cast />} />
+              <Route path='r' element={<R />} />
               <Route>
-        </Routes>
-        </Container>
-    </>
-  );
+                <Route>
+                </Routes>
+              </Container>
+            </>
+            );
 };
