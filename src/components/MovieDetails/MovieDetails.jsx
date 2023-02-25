@@ -1,10 +1,10 @@
 import { fetchMovieDetails } from "getApi/getApi";
-import { useEffect, useState } from "react";
+import { Suspense,useEffect, useState } from "react";
 import { useParams, useLocation,NavLink, Outlet } from "react-router-dom";
 import { LinkButton, Image, Box } from "./MovieDetails.styled";
 
 
-export const MovieDetails = () => {
+ const MovieDetails = () => {
       const URL = 'https://image.tmdb.org/t/p/w500';
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
@@ -16,6 +16,7 @@ export const MovieDetails = () => {
 
     }, [movieId])
     const backHref = location.state?.from ?? '/';
+
 
     return (<>
     
@@ -32,14 +33,17 @@ export const MovieDetails = () => {
             </div>
             <h4>Additional information</h4>
             <ul>
-                <li><NavLink to={`${location.pathname}/cast`}>Cast</NavLink></li>
-                <li><NavLink to={`${location.pathname}/reviews`}>Reviews</NavLink></li>
+                <li><NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink></li>
+                <li><NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink></li>
             </ul>
         </Box>
         )
         }
-        <Outlet/>
-                
+        <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+                </Suspense>
     </>
     )
 }
+
+export default MovieDetails;

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Searchbar, SearchForm, SearchFormButton, ButtonLabel, Input } from "./MoviesPage.styled";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-export const MoviesPage = () => {
+ const MoviesPage = () => {
     const [value, setValue] = useState('');
     const [query, setQuery] = useState('');
   const [films, setFilms] = useState([]);
@@ -63,3 +63,5 @@ export const MoviesPage = () => {
     </>
     )
 }
+
+export default MoviesPage

@@ -44,5 +44,14 @@ async function fetchCast(id) {
     }
 }
 
+async function fetchReviews(id) {
+    try {
+        const movCast = await axios(`movie/${id}/reviews?api_key=${API_KEY}&page=1`);
+        return movCast.data.results
+    } catch (error) {
+        throw new Error(error)
+    }
+}
 
-export {fetchTrendingMovies, fetchFilmByName, fetchMovieDetails,fetchCast}
+
+export {fetchTrendingMovies, fetchFilmByName, fetchMovieDetails,fetchCast, fetchReviews}

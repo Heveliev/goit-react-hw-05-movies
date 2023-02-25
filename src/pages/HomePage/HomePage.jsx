@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 
 
-export const HomePage = () => {
+ const HomePage = () => {
     const [trendMov, setTrendMov] = useState([]);
     const location = useLocation()
 
@@ -29,3 +29,5 @@ export const HomePage = () => {
 
 )
 }
+
+export default HomePage;
