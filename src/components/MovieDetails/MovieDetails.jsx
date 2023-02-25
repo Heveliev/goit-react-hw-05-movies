@@ -39,9 +39,9 @@ console.log(location)
         </Box>)}
     
         
-        <Route path={`${location.pathname}/:cast`}>
+        {/* <Route path={`${location.pathname}/:cast`}>
             {movie && true && <Cast/>}
-        </Route>
+        </Route> */}
         {/* <Route path={`${location.pathname}/:reviews`}>
             {}
         </Route> */}
