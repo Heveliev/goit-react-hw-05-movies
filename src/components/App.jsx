@@ -18,7 +18,7 @@ export const App = () => {
       <Container>
       <Routes>
 
-          <Route path='/' element={<Header />} >
+          <Route  path='/' element={<Header />} >
             
         <Route index element={<HomePage />} />
           <Route path='movies' element={<MoviesPage />} />
