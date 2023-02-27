@@ -1,15 +1,16 @@
 import { fetchFilmByName } from "getApi/getApi";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation,useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Form } from "../../components/Form/Form";
 
-  // "homepage": "https://Heveliev.github.io/goit-react-hw-05-movies",
 
  const MoviesPage = () => {
-
+   const [ search, setSearch] = useSearchParams();
     const [query, setQuery] = useState('');
   const [films, setFilms] = useState([]);
-  const location = useLocation();
+   const location = useLocation();
+   
+
     useEffect(() => {
         if (!query) {
             return
@@ -20,8 +21,13 @@ import { Form } from "../../components/Form/Form";
     }, [query])
     
    const handleSubmitForm = val => {
-     setQuery(val);
- }
+     search.get('query')
+     setSearch({ 'query': val });
+  setQuery(val)
+  
+   
+   }
+
 
     return (<>
       <Form onSubmit={handleSubmitForm} />

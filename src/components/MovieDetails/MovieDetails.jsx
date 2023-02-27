@@ -33,8 +33,8 @@ import { LinkButton, Image, Box } from "./MovieDetails.styled";
             </div>
             <h4>Additional information</h4>
             <ul>
-                <li><NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink></li>
-                <li><NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink></li>
+                <li><NavLink to={'cast'}>Cast</NavLink></li>
+                <li><NavLink to={'reviews'}>Reviews</NavLink></li>
             </ul>
         </Box>
         )
