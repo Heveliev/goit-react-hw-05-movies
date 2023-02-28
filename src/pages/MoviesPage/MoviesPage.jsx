@@ -1,7 +1,8 @@
 import { fetchFilmByName } from "getApi/getApi";
-import { Link, useLocation,useSearchParams } from "react-router-dom";
+import {  useLocation,useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Form } from "../../components/Form/Form";
+import { MovieList } from "components/MovieList/MovieList";
 
 
  const MoviesPage = () => {
@@ -31,15 +32,12 @@ import { Form } from "../../components/Form/Form";
 
     return (<>
       <Form onSubmit={handleSubmitForm} />
-      {films.length ? <ul>
-            {films.map(({ id, title }) => (<li key={id}><Link
-                to={`${id}`}
-                state={{from:location}}
-            ><h3>{title}</h3></Link></li>))}
-        </ul> : <p>Pls try value in input</p>}
+        {films.length ? <MovieList arrayFilm={films}  location={{ from: location }} />
+            : <p>Pls try value in input</p>}
         
     </>
     )
 }
 
 export default MoviesPage
+

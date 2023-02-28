@@ -1,7 +1,8 @@
 import { fetchTrendingMovies } from "getApi/getApi";
 import { useState,useEffect } from "react";
 import { Title} from "./HomePage.styled";
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { MovieList } from "components/MovieList/MovieList";
 
 
 
@@ -19,12 +20,8 @@ import { Link, useLocation } from 'react-router-dom';
     
     return (<>
         <Title>Trending today</Title>
-          <ul>
-            {trendMov.map(({ id, title }) => (<li key={id}><Link
-                to={`movies/${id}`}
-                state={{from:location}}
-            ><h3>{title}</h3></Link></li>))}
-        </ul>
+
+        <MovieList arrayFilm={trendMov} to={'movies/'} location={{from:location}} />
     </>
 
 )
