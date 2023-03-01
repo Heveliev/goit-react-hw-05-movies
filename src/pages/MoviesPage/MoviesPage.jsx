@@ -7,26 +7,22 @@ import { MovieList } from "components/MovieList/MovieList";
 
  const MoviesPage = () => {
    const [ search, setSearch] = useSearchParams();
-    const [query, setQuery] = useState('');
   const [films, setFilms] = useState([]);
    const location = useLocation();
-   
+   const searchParam = search.get('query');
 
     useEffect(() => {
-        if (!query) {
+        if (!searchParam) {
             return
         }
 
 
-        fetchFilmByName(query).then(resp=>setFilms(resp))
-    }, [query])
+        fetchFilmByName(searchParam).then(resp=>setFilms(resp))
+    }, [searchParam])
     
    const handleSubmitForm = val => {
-     search.get('query')
+
      setSearch({ 'query': val });
-  setQuery(val)
-  
-   
    }
 
 
