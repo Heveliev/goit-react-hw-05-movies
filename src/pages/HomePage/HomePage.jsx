@@ -1,14 +1,14 @@
 import { fetchTrendingMovies } from "getApi/getApi";
 import { useState,useEffect } from "react";
 import { Title} from "./HomePage.styled";
-import { useLocation } from 'react-router-dom';
+
 import { MovieList } from "components/MovieList/MovieList";
 
 
 
  const HomePage = () => {
     const [trendMov, setTrendMov] = useState([]);
-    const location = useLocation()
+
 
 
     useEffect(() => {
@@ -21,7 +21,7 @@ import { MovieList } from "components/MovieList/MovieList";
     return (<>
         <Title>Trending today</Title>
 
-        <MovieList arrayFilm={trendMov} to={'movies/'} location={{from:location}} />
+        <MovieList arrayFilm={trendMov} to={'movies/'} />
     </>
 
 )

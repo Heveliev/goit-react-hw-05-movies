@@ -1,5 +1,5 @@
 import { fetchFilmByName } from "getApi/getApi";
-import {  useLocation,useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Form } from "../../components/Form/Form";
 import { MovieList } from "components/MovieList/MovieList";
@@ -8,7 +8,6 @@ import { MovieList } from "components/MovieList/MovieList";
  const MoviesPage = () => {
    const [ search, setSearch] = useSearchParams();
   const [films, setFilms] = useState([]);
-   const location = useLocation();
    const searchParam = search.get('query');
 
     useEffect(() => {
@@ -28,7 +27,7 @@ import { MovieList } from "components/MovieList/MovieList";
 
     return (<>
       <Form onSubmit={handleSubmitForm} />
-        {films.length ? <MovieList arrayFilm={films}  location={{ from: location }} />
+        {films.length ? <MovieList arrayFilm={films} />
             : <p>Pls try value in input</p>}
         
     </>
